@@ -6,4 +6,6 @@
     ViewData["Title"] = "Customer dashboard";
     <h1>Welcome to Customer user page!</h1>
     @ViewBag.Name;
+    <input type="button" value="Back to Main" onclick="window.location='@Url.Action("Login","Home")'" />
+
 }
