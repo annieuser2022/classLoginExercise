@@ -41,19 +41,19 @@ namespace WorldFitness.Controllers
             }
             else if (details.EmailId == customerId && details.Password == customerPassword)
                 {
-                    return RedirectToAction("CustomerIndex", "Customer");
+                    return RedirectToAction("CustomerIndex", "Customer", new {name="bob"});
                 }
             else {     
                 foreach (var eachUser in userList)
                 {
                     if (eachUser.EmailId == details.EmailId && details.Password == eachUser.Password)
                     {
-                        return RedirectToAction("CustomerIndex", "Customer");
+                        return RedirectToAction("CustomerIndex", "Customer", new {name=eachUser.Name});
                     }
                 }   
             }
         
-            ViewBag.errorMessage = "Invalid LoginId or password. Try again...";
+            ViewBag.errorMessage = "Invalid Login id or password. Try again...";
 
             return View("LoginPage"); 
         }
