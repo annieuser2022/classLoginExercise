@@ -1,3 +1,101 @@
+/* _content/WorldFitness/Views/Shared/_AdminLayout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-dn4agwyjri] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-dn4agwyjri] {
+  color: #0077cc;
+}
+
+.btn-primary[b-dn4agwyjri] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-dn4agwyjri], .nav-pills .show > .nav-link[b-dn4agwyjri] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-dn4agwyjri] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-dn4agwyjri] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-dn4agwyjri] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-dn4agwyjri] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-dn4agwyjri] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+/* _content/WorldFitness/Views/Shared/_CustomerLayout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-a5757vfxua] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-a5757vfxua] {
+  color: #0077cc;
+}
+
+.btn-primary[b-a5757vfxua] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-a5757vfxua], .nav-pills .show > .nav-link[b-a5757vfxua] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-a5757vfxua] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-a5757vfxua] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-a5757vfxua] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-a5757vfxua] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-a5757vfxua] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
 /* _content/WorldFitness/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

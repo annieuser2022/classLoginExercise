@@ -29,3 +29,5 @@ C:\Users\zertx\source\repos\WorldFitness\WorldFitness\obj\Debug\net6.0\refint\Wo
 C:\Users\zertx\source\repos\WorldFitness\WorldFitness\obj\Debug\net6.0\WorldFitness.pdb
 C:\Users\zertx\source\repos\WorldFitness\WorldFitness\obj\Debug\net6.0\WorldFitness.genruntimeconfig.cache
 C:\Users\zertx\source\repos\WorldFitness\WorldFitness\obj\Debug\net6.0\ref\WorldFitness.dll
+C:\Users\zertx\source\repos\WorldFitness\WorldFitness\obj\Debug\net6.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\zertx\source\repos\WorldFitness\WorldFitness\obj\Debug\net6.0\scopedcss\Views\Shared\_CustomerLayout.cshtml.rz.scp.css
