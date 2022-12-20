@@ -9,6 +9,8 @@ namespace WorldFitness.Controllers
         private readonly ILogger<HomeController> _logger;
         static string adminPassword="admin";
         static string adminId="admin@fitness.com";
+        static string customerId="customer@fitness.com";
+        static string customerPassword="customer";
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -19,16 +21,21 @@ namespace WorldFitness.Controllers
         {
             return View();
         }
-        public IActionResult LoginPage()
+        public IActionResult Login()
         {
-            return View();
+            return View("LoginPage");
         }
+
         public IActionResult CheckCredentials(Login details) 
         { 
             if(details.EmailId == adminId && details.Password == adminPassword)
             {
                 return RedirectToAction("AdminIndex", "Admin");
             }
+            else if (details.EmailId == customerId && details.Password == customerPassword)
+                {
+                    return RedirectToAction("CustomerIndex", "Customer");
+                }
             return View("LoginPage"); 
         }
 

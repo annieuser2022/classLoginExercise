@@ -2,9 +2,9 @@
 
 namespace WorldFitness.Controllers
 {
-    public class AdminController : Controller
+    public class CustomerController : Controller
     {
-        public IActionResult AdminIndex()
+        public IActionResult CustomerIndex()
         {
             return View();
         }

@@ -1,10 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@model WorldFitness.Models.Login
 <div class="text-center">
     <h1 class="display-4">Welcome to World Fitness Club</h1>
     <h3>Please Log in:</h3>
     <input type="button" value="Login"
-        onclick="window.location='@Url.Action("LoginPage","Home")'" />
+        onclick="window.location='@Url.Action("Login","Home")'" />
 </div>
