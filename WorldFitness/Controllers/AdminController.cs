@@ -8,5 +8,9 @@ namespace WorldFitness.Controllers
         {
             return View();
         }
+        public IActionResult CreateUser()
+        {
+            return View();
+        }
     }
 }

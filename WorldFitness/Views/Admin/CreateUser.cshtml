@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model WorldFitness.Models.User;
+
+    <form action="AddUser" asp-asp-controller="Home" method="post">
+        Name:
+         <input type="text" name="name" value="">
+        Email:
+         <input type="email" name="emailId" value="">
+        Password:
+         <input type="password" name="password" value="">
+        <input type="submit" value="Submit">
+    </form>
+}

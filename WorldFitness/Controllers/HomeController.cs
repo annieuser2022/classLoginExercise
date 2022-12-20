@@ -11,7 +11,8 @@ namespace WorldFitness.Controllers
         static string adminId="admin@fitness.com";
         static string customerId="customer@fitness.com";
         static string customerPassword="customer";
-
+        static string name = "name";
+        static IList<User> userList=new List<User>();
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -26,6 +27,12 @@ namespace WorldFitness.Controllers
             return View("LoginPage");
         }
 
+        public IActionResult AddUser(User userDetails)
+        {
+            userList.Add(userDetails);
+
+            return RedirectToAction("Login");
+        }
         public IActionResult CheckCredentials(Login details) 
         { 
             if(details.EmailId == adminId && details.Password == adminPassword)
