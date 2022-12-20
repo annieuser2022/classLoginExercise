@@ -43,6 +43,18 @@ namespace WorldFitness.Controllers
                 {
                     return RedirectToAction("CustomerIndex", "Customer");
                 }
+            else {     
+                foreach (var eachUser in userList)
+                {
+                    if (eachUser.EmailId == details.EmailId && details.Password == eachUser.Password)
+                    {
+                        return RedirectToAction("CustomerIndex", "Customer");
+                    }
+                }   
+            }
+        
+            ViewBag.errorMessage = "Invalid LoginId or password. Try again...";
+
             return View("LoginPage"); 
         }
 
