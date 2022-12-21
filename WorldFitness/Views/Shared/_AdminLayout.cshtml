@@ -26,12 +26,18 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="CreateUser">Add User</a>
                         </li>
                                                 <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="ShowUser">List of Users</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="ShowUsers">List of Users</a>
                         </li>
                     </ul>
+                </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul>
+                        <ul>User: @CurrentUser.Name</ul>
+                        <ul>Role: @CurrentUser.Role</ul>
+                    </ul>
+                    <button class="navbar-toggler" type="button" value="Logout" 
+                        onclick="window.location='@Url.Action("Logout", "Home")'">
+                    </button>
                 </div>
             </div>
         </nav>

@@ -4,12 +4,13 @@
 @model WorldFitness.Models.Login
 @{
     <h1>Login Page</h1>
+
     <form asp-action="CheckCredentials" method="post">
         EmailId:
         <input type="email" name="emailId" value="">
         Password:
         <input type="password" name="password" value="">
-        <input type="submit" value="Submit">
+        <input style="background-color:aqua" type="submit" value="Submit">
     </form>
     <p style="color:red">@ViewBag.errorMessage</p>
 }

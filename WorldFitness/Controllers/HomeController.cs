@@ -7,12 +7,7 @@ namespace WorldFitness.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        static string adminPassword="admin";
-        static string adminId="admin@fitness.com";
-        static string customerId="customer@fitness.com";
-        static string customerPassword="customer";
-        static string name = "name";
-        static IList<User> userList=new List<User>();
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -26,33 +21,39 @@ namespace WorldFitness.Controllers
         {
             return View("LoginPage");
         }
-
-        public IActionResult AddUser(User userDetails)
+        public IActionResult Logout()
         {
-            userList.Add(userDetails);
+            CurrentUser.Name = "";
+            CurrentUser.EmailId = "";
+            CurrentUser.Role = "";
+            return View("LogoutPage");
+        }
+        public IActionResult AddUser(User UserDetails)
+        {
+            UserData.UserList.Add(UserDetails);
 
-            return RedirectToAction("Login");
+            return RedirectToAction("ShowUsers","Admin");
         }
         public IActionResult CheckCredentials(Login details) 
-        { 
-            if(details.EmailId == adminId && details.Password == adminPassword)
+        {
+            foreach (var eachUser in UserData.UserList)
             {
-                return RedirectToAction("AdminIndex", "Admin");
-            }
-            else if (details.EmailId == customerId && details.Password == customerPassword)
+                if (eachUser.EmailId == details.EmailId && eachUser.Password == details.Password)
                 {
-                    return RedirectToAction("CustomerIndex", "Customer", new {name="bob"});
-                }
-            else {     
-                foreach (var eachUser in userList)
-                {
-                    if (eachUser.EmailId == details.EmailId && details.Password == eachUser.Password)
+                    CurrentUser.EmailId= eachUser.EmailId;
+                    CurrentUser.Name = eachUser.Name;
+                    CurrentUser.Role = eachUser.Role;
+                    if (eachUser.Role == "Admin")
                     {
-                        return RedirectToAction("CustomerIndex", "Customer", new {name=eachUser.Name});
+                        return RedirectToAction("AdminIndex", "Admin", new { name = eachUser.Name });
                     }
-                }   
+                    else
+                    {
+                        return RedirectToAction("CustomerIndex", "Customer", new { name = eachUser.Name });
+                    }
+                }
             }
-        
+
             ViewBag.errorMessage = "Invalid Login id or password. Try again...";
 
             return View("LoginPage"); 
@@ -67,13 +68,6 @@ namespace WorldFitness.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
-        public IActionResult GetUsersList()
-        {
-            ViewBag["users"] = (List<User>)userList;
-            TempData["users"] = (List < User >)userList;
-            return RedirectToAction("UsersList","Admin");
         }
     }
 }
