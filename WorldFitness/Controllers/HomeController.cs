@@ -68,5 +68,12 @@ namespace WorldFitness.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult GetUsersList()
+        {
+            ViewBag["users"] = (List<User>)userList;
+            TempData["users"] = (List < User >)userList;
+            return RedirectToAction("UsersList","Admin");
+        }
     }
 }
