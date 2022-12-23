@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Runtime.InteropServices;
 using WorldFitness.Models;
 
 namespace WorldFitness.Controllers
@@ -11,6 +12,16 @@ namespace WorldFitness.Controllers
         }
         public IActionResult CreateUser()
         {
+            return View();
+        }           
+        
+        public IActionResult DeleteUser([Optional]string error)
+        {
+            if(error != null)
+            {
+               ViewBag.UserList = UserData.UserList;
+               ViewBag.Error = error;
+            }
             return View();
         }        
         

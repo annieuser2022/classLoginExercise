@@ -30,11 +30,26 @@ namespace WorldFitness.Controllers
         }
         public IActionResult AddUser(User UserDetails)
         {
+
             UserData.UserList.Add(UserDetails);
 
             return RedirectToAction("ShowUsers","Admin");
-        }        
-        
+        }
+
+        public IActionResult DeleteUser(User UserDetails)
+        {
+            foreach(var eachUser in UserData.UserList.ToList())
+            {
+                if (eachUser.EmailId == UserDetails.EmailId)
+                {
+                    UserData.UserList.Remove(eachUser);
+
+                    return RedirectToAction("ShowUsers", "Admin");
+                }
+            }
+            return RedirectToAction("DeleteUser", "Admin", new { error = "User not found! Please try again..." });
+        }
+
         public IActionResult CheckCredentials(Login details) 
         {
             foreach (var eachUser in UserData.UserList)
