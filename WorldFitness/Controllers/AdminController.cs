@@ -15,17 +15,14 @@ namespace WorldFitness.Controllers
             return View();
         }           
         
-        public IActionResult DeleteUser([Optional]string error)
+        public IActionResult DeleteUser()
         {
-
-               ViewBag.UserList = UserData.UserList;
-               ViewBag.Error = error;
-
             return View();
         }        
         
-        public IActionResult ShowUsers()
+        public IActionResult ShowUsers([Optional]string error)
         {
+            ViewBag.Error = error;
             ViewBag.UsersList = UserData.UserList;
             return View();
         }

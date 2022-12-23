@@ -47,12 +47,12 @@ namespace WorldFitness.Controllers
                     return RedirectToAction("ShowUsers", "Admin");
                 }
             }
-            return RedirectToAction("DeleteUser", "Admin", new { error = "User not found! Please try again..." });
+            return RedirectToAction("ShowUsers", "Admin", new { error = "User " + UserDetails.EmailId+" not found! Please try again..." });
         }
 
         public IActionResult CheckCredentials(Login details) 
         {
-            foreach (var eachUser in UserData.UserList)
+            foreach (var eachUser in UserData.UserList.ToList())
             {
                 if (eachUser.EmailId == details.EmailId && eachUser.Password == details.Password)
                 {
