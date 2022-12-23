@@ -33,7 +33,8 @@ namespace WorldFitness.Controllers
             UserData.UserList.Add(UserDetails);
 
             return RedirectToAction("ShowUsers","Admin");
-        }
+        }        
+        
         public IActionResult CheckCredentials(Login details) 
         {
             foreach (var eachUser in UserData.UserList)

@@ -12,7 +12,8 @@ namespace WorldFitness.Controllers
         public IActionResult CreateUser()
         {
             return View();
-        }
+        }        
+        
         public IActionResult ShowUsers()
         {
             ViewBag.UsersList = UserData.UserList;
