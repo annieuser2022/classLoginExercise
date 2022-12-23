@@ -17,11 +17,10 @@ namespace WorldFitness.Controllers
         
         public IActionResult DeleteUser([Optional]string error)
         {
-            if(error != null)
-            {
+
                ViewBag.UserList = UserData.UserList;
                ViewBag.Error = error;
-            }
+
             return View();
         }        
         
